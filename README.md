@@ -1,4 +1,4 @@
-# 🎟️ CRUD Ticket Booking System
+# 🎟️ Ticket Booking System
 
 A **Ticket Booking System** built with CRUD (Create, Read, Update, Delete) functionality for managing events and ticket reservations.
 
