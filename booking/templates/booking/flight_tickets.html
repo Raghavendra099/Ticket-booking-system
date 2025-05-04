@@ -1,0 +1,45 @@
+{% extends 'booking/base.html' %}
+{% load static %}
+
+{% block title %}Available Flight Tickets{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'booking/css/style.css' %}">
+
+<!-- Beautiful Gradient Header -->
+<div class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white py-12 mb-10 shadow-lg">
+  <h1 class="text-5xl font-extrabold text-center">✈️ Available Flight Tickets</h1>
+  <p class="text-center mt-3 text-lg font-light">Find the best flights at your fingertips – smooth, secure, and instant booking!</p>
+</div>
+
+<!-- Ticket Section -->
+<div class="max-w-7xl mx-auto px-6">
+  <h2 class="text-3xl font-semibold text-indigo-800 text-center mb-8">🛫 Choose Your Flight</h2>
+
+  {% if flights %}
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% for flight in flights %}
+        <div class="ticket-card modern-card transition-transform hover:scale-105 shadow-lg">
+          <div class="ticket-card-header text-center">
+            <div class="icon text-5xl text-indigo-600">✈️</div>
+            <h2 class="text-xl font-semibold text-indigo-800 mt-2">{{ flight.airline_name }}</h2>
+          </div>
+
+          <div class="flight-details text-gray-700 mt-4">
+            <p><strong>From:</strong> {{ flight.source }} → <strong>To:</strong> {{ flight.destination }}</p>
+            <p><strong>Departure:</strong> {{ flight.departure_time|date:"F j, Y, H:i A" }}</p>
+            <p><strong>Arrival:</strong> {{ flight.arrival_time|date:"F j, Y, H:i A" }}</p>
+            <p><strong>Price:</strong> ₹{{ flight.price }}</p>
+          </div>
+
+          <div class="text-center mt-6">
+            <a href="{% url 'booking:book_ticket_selected' ticket_type='flight' ticket_id=flight.id %}" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="text-center text-gray-500">No flights available at the moment.</p>
+  {% endif %}
+</div>
+{% endblock %}

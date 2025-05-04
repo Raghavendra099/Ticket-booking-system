@@ -1,0 +1,20 @@
+<form id="chatForm">
+    <input type="text" name="prompt" placeholder="Ask anything...">
+    <button type="submit">Ask</button>
+  </form>
+  <div id="chatResponse"></div>
+  
+  <script>
+    document.getElementById("chatForm").onsubmit = async function(e) {
+      e.preventDefault();
+      let prompt = this.prompt.value;
+      let res = await fetch("/chatbot/", {
+        method: "POST",
+        headers: {"X-CSRFToken": "{{ csrf_token }}"},
+        body: new URLSearchParams({prompt})
+      });
+      let data = await res.json();
+      document.getElementById("chatResponse").innerText = data.response;
+    }
+  </script>
+  

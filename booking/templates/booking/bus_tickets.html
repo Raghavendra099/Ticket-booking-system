@@ -1,0 +1,39 @@
+<!-- booking/templates/booking/bus_tickets.html -->
+{% extends 'booking/base.html' %}
+{% load static %}
+
+{% block title %}Available Bus Tickets{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'booking/css/style.css' %}">
+
+<div class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white py-12 mb-10 shadow-lg">
+  <h1 class="text-5xl font-extrabold text-center">🚌 Available Bus Tickets</h1>
+  <p class="text-center mt-3 text-lg font-light">Book your bus tickets with ease and comfort – secure, fast, and affordable!</p>
+</div>
+
+<div class="max-w-6xl mx-auto px-4">
+  <h2 class="text-3xl font-semibold text-indigo-800 text-center mb-8">🚍 Choose Your Bus</h2>
+
+  {% if buses %}
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for bus in buses %}
+        <div class="ticket-card">
+          <div class="icon">🚌</div>
+          <div>
+            <h2>{{ bus.bus_operator }}</h2>
+            <p>From: <strong>{{ bus.source }}</strong> → To: <strong>{{ bus.destination }}</strong></p>
+            <p>Departure: {{ bus.departure_time }}</p>
+            <p>Arrival: {{ bus.arrival_time }}</p>
+            <p>Price: ₹{{ bus.price }}</p>
+            <a href="{% url 'booking:book_ticket_form' ticket_type='bus' ticket_id=bus.id %}" class="mt-3 inline-block bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">Book Now</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="text-center text-gray-500">No buses available at the moment.</p>
+  {% endif %}
+</div>
+
+{% endblock %}

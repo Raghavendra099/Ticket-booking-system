@@ -1,0 +1,289 @@
+/* General Body Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Typography */
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    margin-bottom: 16px;
+    color: #1e293b;
+    text-align: center;
+    font-weight: 600;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+    margin: 10px 0;
+}
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #1e40af;
+    text-decoration: underline;
+}
+
+/* About Page */
+.about-page {
+    background-image: url("/static/booking/images/about-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+/* Containers */
+.container {
+    background: rgba(0, 0, 0, 0.75);
+    padding: 50px;
+    margin: 50px auto;
+    width: 75%;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+.container.gradient {
+    background-image: linear-gradient(to right, #4C6DFF, #6A4CFF, #9C4FFF);
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* Creators Section */
+.creators {
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #90ee90;
+    text-align: center;
+}
+
+/* Form Styles */
+.form-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: #6366f1;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+form input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+input, button {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Buttons */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #6C63FF;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #5A53E4;
+    transform: scale(1.02) translateY(-1px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    transform: scale(1.02);
+}
+
+/* Ticket Card Styles */
+.ticket-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    width: 100%;
+}
+
+.ticket-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.ticket-card .icon {
+    font-size: 3rem;
+    margin-bottom: 12px;
+    color: #6366f1;
+}
+
+.ticket-card h2 {
+    font-size: 1.6rem;
+    margin: 0;
+    color: #1e293b;
+    font-weight: 600;
+}
+
+.ticket-card p {
+    margin: 6px 0;
+    color: #475569;
+}
+
+.ticket-card .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ef4444;
+}
+
+.ticket-card a {
+    background-color: #2563eb;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 12px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.ticket-card a:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* Flight Ticket Details */
+.flight-details p {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.flight-details strong {
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .ticket-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .ticket-card .icon {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .ticket-card h2 {
+        font-size: 1.4rem;
+    }
+
+    .ticket-card p {
+        margin: 8px 0;
+    }
+
+    .ticket-card a {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+/* Background animation */
+.home-hero {
+    background: linear-gradient(135deg, #e0f7fa, #f0f4f8);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Reusable Buttons */
+.btn-blue,
+.btn-green,
+.btn-red {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-blue { background-color: #3b82f6; }
+.btn-green { background-color: #10b981; }
+.btn-red { background-color: #ef4444; }
+
+.btn-blue:hover,
+.btn-green:hover,
+.btn-red:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional Per-Page Background Classes */
+.flight-page {
+    background-color: #e0f2ff;
+}
+
+.train-page {
+    background-color: #ecfdf5;
+}
+
+.bus-page {
+    background-color: #fefce8;
+}

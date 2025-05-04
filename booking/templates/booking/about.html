@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Us</title>
+    <link rel="stylesheet" href="{% static 'booking/css/style.css' %}">
+    <style>
+        body {
+            background-image: url("{% static 'booking/images/about-bg.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.75);
+            padding: 50px;
+            margin: 50px auto;
+            width: 75%;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #ffd700;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .creators {
+            margin-top: 30px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 20px;
+            color: #90ee90;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>About Our Ticket Booking System</h1>
+        <p>
+            Our Ticket Booking System is a smart and efficient platform designed to make booking event tickets quick, simple, and hassle-free. Whether you're attending concerts, seminars, or college events, our system streamlines the process with a clean interface, easy navigation, and secure payment integration using Stripe.
+        </p>
+        <p>
+            This project features user registration, ticket management, chatbot-based assistance, and real-time payment verification. It's built using Django, a powerful Python-based web framework, ensuring performance, security, and scalability. We aim to enhance user convenience while reducing manual errors and long queues.
+        </p>
+        <p>
+            With a focus on modern web development practices, this project also introduces interactive elements like chatbot suggestions and AI integration to help users make better choices while booking tickets.
+        </p>
+        <p>
+            The system is perfect for college-level event management or any small to mid-size organization that wants to digitize its ticketing process efficiently.
+        </p>
+
+        <div class="creators">
+            Created with passion by:<br>
+            Raghavendra V M & Amith B
+        </div>
+    </div>
+</body>
+</html>
